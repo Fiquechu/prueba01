@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="warning">Alumnos Gatunos: </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list>
+    <div *ngFor="let persona of personas" [routerLink]="['/', persona.id]">
+<!-- bloque de la sentencia ngFor -->
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="persona.foto" />
+        </ion-avatar>
+        <ion-label>{{persona.nombre | titlecase}}</ion-label>
+      </ion-item>
+    </div>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    Agregar:
+    <ion-fab-button color="success" size="small" type="button" (click)="agregar()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+
+
+</ion-content>
+
+
+
+<ion-footer>
+      <ion-toolbar>
+       <ion-title>¯\_(ツ)_/¯</ion-title>
+      </ion-toolbar>
+</ion-footer>
